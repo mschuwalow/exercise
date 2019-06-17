@@ -1,0 +1,12 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"name": "simplaex-exercise",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "workspace",
+	"workspaceFolder": "/workspace",
+	"extensions": [
+		"scalameta.metals"
+	],
+	"shutdownAction": "stopCompose",
+	"settings": {}
+}

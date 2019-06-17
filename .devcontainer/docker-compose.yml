@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  workspace:
+    build:
+      context: .
+      args:
+        - uid=$COMPOSE_UID
+        - gid=$COMPOSE_GID
+    security_opt: ['label:disable']
+    volumes:
+      - ../:/workspace:Z
+      - vscode-remote:/home/developer/.vscode-server-insiders:Z
+      - ivy-cache:/home/developer/.ivy2/cache:Z
+      - ~/.gitconfig:/home/developer/.gitconfig:ro,z
+      - ~/.ssh:/home/developer/.ssh:ro,z
+    command: sleep infinity
+
+volumes:
+  vscode-remote:
+  ivy-cache:
